@@ -1,0 +1,45 @@
+CREATE DATABASE Discos;
+USE Discos;
+
+CREATE TABLE Album(
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+ano INT NOT NULL,
+PRIMARY KEY (id)
+);
+
+CREATE TABLE Faixas(
+id INT NOT NULL AUTO_INCREMENT,
+numero INT NOT NULL,
+nome VARCHAR(50) NOT NULL,
+duracao VARCHAR(50) NOT NULL,
+album_id INT,
+PRIMARY KEY (id),
+FOREIGN KEY (album_id) REFERENCES Album(id)
+);
+
+INSERT INTO Album(nome, ano)
+VALUES("Rei do Gado", 1961);
+
+INSERT INTO Faixas VALUES
+(DEFAULT, 1, "Alma de Boêmio", "3:15", 1),
+(DEFAULT, 2, "Borboleta de Asfalto", "3:00", 1),
+(DEFAULT, 3, "Punhal da Falsidade (Mulher Sem Nome)", "3:07", 1),
+(DEFAULT, 4, "Amigo Sincero", "3:30", 1),
+(DEFAULT, 5, "Teus Beijos", "2:48", 1),
+(DEFAULT, 6, "Despedida", "2:45", 1),
+(DEFAULT, 7, "Tormento", "3:09", 1),
+(DEFAULT, 8, "Nove e Nove", "3:18", 1),
+(DEFAULT, 9, "Rei do Gado", "2:57", 1),
+(DEFAULT, 10, "Urutu Cruzeiro", "3:14", 1),
+(DEFAULT, 11, "Minas Gerais", "3:47", 1),
+(DEFAULT, 12, "Carteiro", "3:16", 1),
+(DEFAULT, 13, "Pagode em Brasilia", "2:58", 1);
+
+
+INSERT INTO Album(nome, ano)
+VALUES("Teste", 1960);
+
+INSERT INTO Faixas VALUES
+(DEFAULT, 1, "Batata", "3:15", 2),
+(DEFAULT, 2, "Cenora", "3:00", 2),
